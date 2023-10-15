@@ -81,9 +81,10 @@ const novaForma = (wireframeState) => {
 
 document.querySelectorAll(".forma").forEach((btnForma) => {
   btnForma.addEventListener("click", (e) => {
+    const { checked } = document.querySelector(".fill");
     const { name } = e.target;
     selectedForma = name;
-    novaForma(true);
+    novaForma(!checked);
   });
 });
 
