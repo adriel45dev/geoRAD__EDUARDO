@@ -24,6 +24,10 @@ window.addEventListener("resize", () => {
 
   renderer.setSize(newWidth, newHeight);
 });
+const textureLoader = new THREE.TextureLoader();
+const texture = textureLoader.load(
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc4DvMQ1MuiOOEXF5TBv9IDPrXUlz2lWH8xKk5I-PQ&s"
+);
 
 // Criação de uma forma
 // const geometry = new THREE.BoxGeometry();
@@ -32,6 +36,7 @@ let geometry = formas.cubo();
 let material = new THREE.MeshBasicMaterial({
   color: 0x3293a8,
   wireframe: true,
+  map: texture,
 });
 
 let forma = new THREE.Mesh(geometry, material);
@@ -57,6 +62,7 @@ const animate = (forma) => {
 
 animate(forma);
 
+// alteração
 let selectedForma = "cubo";
 
 const novaForma = (wireframeState) => {
@@ -64,6 +70,7 @@ const novaForma = (wireframeState) => {
   material = new THREE.MeshBasicMaterial({
     color: 0x3293a8,
     wireframe: wireframeState,
+    map: texture,
   });
 
   geometry = formas[selectedForma]();
