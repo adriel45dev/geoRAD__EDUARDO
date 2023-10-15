@@ -25,7 +25,7 @@ window.addEventListener("resize", () => {
   renderer.setSize(newWidth, newHeight);
 });
 const textureLoader = new THREE.TextureLoader();
-const texture = textureLoader.load("/img/textura.jpeg");
+const texture = textureLoader.load("./img/textura.jpeg");
 
 // Criação de uma forma
 // const geometry = new THREE.BoxGeometry();
